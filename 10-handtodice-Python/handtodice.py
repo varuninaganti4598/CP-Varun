@@ -6,11 +6,9 @@
 # Hint: You might find // and % useful here, and also getKthDigit().
 
 def handtodice(hand):
-	# your code goes here
-	a=hand
 	res=[]
-	while(a>0):
-			b=a%10
+	while(hand>0):
+			b=hand%10
 			res.append(b)		 
-			a=a//10
+			hand=hand//10
 	return tuple(res[::-1]) #reversing the list and converting to tuple
