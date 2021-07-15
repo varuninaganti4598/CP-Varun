@@ -5,5 +5,10 @@
 # the triangleArea function you just wrote above.
 
 def triangleareabycoordinates(x1, y1, x2, y2, x3, y3):
-	# your code goes here
-	pass
+	
+	a=x1*(y2-y3)
+	b=x2*(y3-y1)
+	c=x3*(y1-y2)
+	d=abs(a+b+c)
+	area=0.5*d
+	return area
