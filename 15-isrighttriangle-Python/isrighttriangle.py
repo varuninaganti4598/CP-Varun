@@ -5,6 +5,18 @@
 # distance(x1, y1, x2, y2), which you might call several times. Also, remember to use
 # almostEqual (instead of ==) when comparing floats.
 
+import math
+def distance(x1,y1,x2,y2):
+    dis=math.sqrt((x2-x1)**2+(y2-y1)**2)
+    return dis
+
 def isrighttriangle(x1, y1, x2, y2, x3, y3):
 	# your code goes here
-	pass
+	a1=distance(x1,y1,x2,y2)**2
+	a2=distance(x2,y2,x3,y3)**2
+	a3=distance(x3,y3,x1,y1)**2
+
+	if(math.isclose(a1+a2,a3) or math.isclose(a2+a3,a1) or math.isclose(a3+a1,a2)):
+		return True
+	else:
+		return False
