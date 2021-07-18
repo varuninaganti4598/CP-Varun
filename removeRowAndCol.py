@@ -23,6 +23,9 @@
 
 def removeRowAndCol(L, row, col):
     # Your code goes here...
-    pass
+    e=L
+    for i in e:
+        del i[row][col]
+    print(e)
 
 # Write your own test cases.
