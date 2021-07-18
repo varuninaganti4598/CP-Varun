@@ -24,8 +24,26 @@
 def removeRowAndCol(L, row, col):
     # Your code goes here...
     e=L
-    for i in e:
-        del i[row][col]
-    print(e)
+    if(row<0 or col<0):
+        return None
+    elif(row>len(e) or col>len(e[0]) ):
+        # print("None")
+        return None
+    else:
+        for i in e:
+            del i[col]
+        del e[row]
 
+    # print(e)
+    return e
+    
+print(removeRowAndCol([ [ 2, 3, 4, 5],
+  [ 8, 7, 6, 5],
+  [ 0, 1, 2, 3] ], 1,2))
+print(removeRowAndCol([ [ 2, 3, 4, 5],
+  [ 8, 7, 6, 5],
+  [ 0, 1, 2, 3] ], -1,-2))
+print(removeRowAndCol([ [ 2, 3, 4,],
+  [ 8, 6, 5],
+  [ 0, 2, 3] ], 0,0))
 # Write your own test cases.
