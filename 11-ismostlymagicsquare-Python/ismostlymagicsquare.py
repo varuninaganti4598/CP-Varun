@@ -13,6 +13,45 @@
 #   [ 2, 1]]
 # Each row and each column add to 3, but one diagonal adds to 2 and the other to 4.
 
+def diagonalCheck(a,rows,cols):
+	d1=0
+	d2=0
+	for i in range(rows):
+		d1+=a[i][i]
+		d2+=a[i][-1 - i]
+						
+	if(d1==d2):
+    		return True
+	else:
+    		return False
+		
+
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	rows=len(a)
+	cols=len(a[0])
+	rowsum=0
+	colsum=0
+	if(rows==1):
+    		return True
+	elif(diagonalCheck):
+		for i in range(rows):
+			for j in range(cols):
+				rowsum+=a[i][j]
+				colsum+=a[j][i]
+				# print(sum)
+			r=rowsum
+			c=colsum
+			
+			if(c==r):
+				rowsum=0
+				colsum=0
+			else:
+				return False
+			
+		return True
+	else:
+    		return False
+	
+    				
+	
