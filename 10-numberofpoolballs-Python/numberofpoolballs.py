@@ -9,4 +9,10 @@
 
 def numberofpoolballs(rows):
 	# Your code goes here
-	pass
+	if(rows<0):
+		return None
+	else:
+		n=rows+1
+		n1=rows*n
+		return (int(n1/2))
+
