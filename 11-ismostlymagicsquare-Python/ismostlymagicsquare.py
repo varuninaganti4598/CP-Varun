@@ -32,6 +32,7 @@ def ismostlymagicsquare(a):
 	cols=len(a[0])
 	rowsum=0
 	colsum=0
+	l=[]
 	if(rows==1):
     		return True
 	elif(diagonalCheck):
@@ -40,16 +41,18 @@ def ismostlymagicsquare(a):
 				rowsum+=a[i][j]
 				colsum+=a[j][i]
 				# print(sum)
-			r=rowsum
-			c=colsum
+			l.append(rowsum)
+			l.append(colsum)
+			rowsum=0
+			colsum=0
+		final=len(set(l))
+		# print(len(final))
+		if(final==1):
+			return True
+		else:
+			return False
 			
-			if(c==r):
-				rowsum=0
-				colsum=0
-			else:
-				return False
-			
-		return True
+		
 	else:
     		return False
 	
