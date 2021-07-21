@@ -17,6 +17,30 @@
 # assert(ishappynumber(404) == True)
 # assert(ishappynumber(405) == False)
 
+    		
 def ishappynumber(n):
 	# your code goes here
-	pass
+	if(n==1):
+		return True
+	elif(n<10):
+    		return False
+	res=check(n)
+	if(res==1):
+		return True
+	elif(res<10):
+		return False
+
+def check(n):
+	# if(n<0):
+    # 		return False
+	# else:
+		sum=0
+		while(1):
+			a=n%10
+			sum+=a*a
+			n=n//10
+			if(n==0):
+				if(sum<10):
+					return sum
+				n=sum
+				sum=0
