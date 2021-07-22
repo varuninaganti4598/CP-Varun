@@ -8,5 +8,32 @@
 
 
 def fun_interleave(s1,s2):
-	return ""
+    	
+	result=""
+	l=[]
+	c=0
+	if(len(s1)>len(s2)):
+		for i in range(len(s2)):
+				result+=s1[i]
+				result+=s2[i]
+				c+=1
+		result+=s1[c:]
+		return result
+	elif(len(s2)>len(s1)):
+		for i in range(len(s1)):
+				result+=s1[i]
+				result+=s2[i]
+				c+=1
+		result+=s2[c:]
+		return result
+	else:
+		for i in range(len(s1)):
+			result+=s1[i]
+			result+=s2[i]
+		# print(result)
+		return result
+
+# print(fun_interleave("pto","yhn"))
+	
+    				
 	
