@@ -6,4 +6,17 @@
 
 def isrotated(str1, str2):
 	#Your code goes here
-	pass
+
+	
+	if(len(str1)!=len(str2)):
+		return False
+	else:
+		for i in range(len(str1)):
+			result=""
+			result+=str1[i:]+str1[:i]
+			if(result==str2):
+    				return True
+			
+	return False
+
+# print(isrotated("XYZ", "ZXY"))
