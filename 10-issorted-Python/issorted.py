@@ -6,5 +6,27 @@
 # the list.
 
 def issorted(a):
-	# your code goes here
-	pass
+    # your code goes here
+	if(len(a)==1 or len(a)==0):
+						return True
+	else:
+		n=len(a)
+		m=min(a)
+		maxi=max(a)
+		c=0
+		for i in range(n):
+				if(type(a[i])!=int ):
+						return False
+				if(m==maxi):
+    						return True
+				if(a[0]==m):
+					if(a[i-1]<a[i]):
+						c+=1
+				if(a[0]==maxi):
+					if(a[i-1]>a[i]):
+    						c+=1
+		if(c==len(a)-1):
+				return True
+		else:
+				return False
+						
