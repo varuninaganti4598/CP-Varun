@@ -6,6 +6,13 @@
 
 
 def fun_alternatingsum(a): 
-	return 0
+	if (len(a)==0):
+    		return 0
+	elif(len(a)==1):
+    		return a[0]
+	else:
+    		r=a[0]+ fun_alternatingsum(a[2:])-a[1]
+    		return r
+
 
 
