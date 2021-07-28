@@ -8,5 +8,21 @@
 # Also the function returns the empty list if the original list is empty. 
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
+
+def check(n):
+	a=n%10
+	if(a%2!=0):
+		return check(n//10)
+    		
+
 def fun_recursion_onlyevendigits(l): 
+	r=[]
+	if(len(l)==0):
 		return []
+	else:
+		i=0
+		b=check(l[i])
+		print(b)
+    			
+
+		
