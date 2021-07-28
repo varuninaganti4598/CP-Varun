@@ -10,5 +10,23 @@
 
 
 def fun_getaverage(s): 
-	return 0.0
+
+	sum=0
+	c=0
+	c1=0
+	l=s.split(",")
+	for i in range(len(l)):
+		if(l[i].isnumeric()):
+			sum+=int(l[i])
+			c+=1
+		else:
+			c1+=1
+			if(c1==len(l)):
+					return 0.0
+	res=sum/c
+	return res
+
+# print(fun_getaverage("13,excused,14,absent"))
+
+
 
