@@ -9,20 +9,24 @@
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
 
-def check(n):
+def check(n,i=0,res=0):
+	if(n==0):
+		return res
 	a=n%10
-	if(a%2!=0):
-		return check(n//10)
+	if(a%2==0):
+		res+=(10**i*a)
+		i+=1
+	return check(n//10,i,res)
     		
 
 def fun_recursion_onlyevendigits(l): 
 	r=[]
 	if(len(l)==0):
-		return []
+		return r
 	else:
-		i=0
-		b=check(l[i])
-		print(b)
+		emp=check(l[0])
+		r.append(emp)
+		return r+fun_recursion_onlyevendigits(l[1:])
     			
 
 		
