@@ -19,5 +19,34 @@
 
 def recursion_binarysearchvalues(L, v):
 	# Your codes goes here
-	pass
+	emp=[]
+	low=0
+	high=len(L)-1
+	return bsearch(L,low,high,v,emp)
+
+def bsearch(L,low,high,v,emp):
+	if(len(emp)>=len(L)/2):
+			return emp
+	else:
+		mid=(low+high)//2
+		if(L[mid]==v):
+				emp=final(mid,v,emp)
+				return emp
+		elif((ord(L[mid])>(ord(v)))):
+				high=mid-1
+				emp=final(mid,L[mid],emp)
+				return bsearch(L,low,high,v,emp)
+		else:
+			low=mid+1
+			emp=final(mid,L[mid],emp)
+			return bsearch(L,low,high,v,emp)
+
+
+def final(n,v,emp):
+		result=(n,v)
+		emp.append(result)
+		return emp
+
+
+    					
 	
