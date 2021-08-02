@@ -12,6 +12,25 @@
 
 def areAnagrams(s1, s2):
     # Your code goes here...
-    pass
+    if(s1=="" or s2==""):
+        return None
+    else:
+        s1=s1.lower()
+        s2=s2.lower()
+        for i in s1:
+                if(s1.count(i)==s2.count(i)):
+                    return True
+                else:
+                    return False
+ 
+
+# print(areAnagrams('aba','BAA'))
 
 # write your test cases here...
+
+assert(areAnagrams('aba','BAA')== True)
+assert(areAnagrams('Bba','BAA')== False)
+assert(areAnagrams('aAa','aAA')== True)
+assert(areAnagrams('cba','BAC')== True)
+assert(areAnagrams('','')== None)
+print("All Test Cases Passed!")
