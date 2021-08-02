@@ -42,3 +42,21 @@ class BinaryTree(object):
         print(start.value)
         self.preorder_print(start.left)
         self.preorder_print(self.right)
+
+    def Inorder(self,start):
+        
+        if(start):
+            print(self.left)
+            self.Inorder(start.value)
+            # print(start.value)
+
+            self.Inorder(start.right)
+
+tree = BinaryTree(1)
+
+tree.root.left = Node(2)
+tree.root.right = Node(3)
+tree.root.left.left = Node(4)
+tree.root.left.right = Node(5)
+
+tree.Inorder(tree)
