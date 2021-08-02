@@ -15,4 +15,22 @@
 
 def recursion_secondlargest(L):
 	# Your code goes here
-	pass
+	if(len(L)==0 or len(L)==1):
+    		return None
+	return check(L)
+
+def check(L,i=0,a=0,b=0):
+		if(i<len(L)):
+			b=a
+			if(a<L[i]):
+				a=L[i]
+				return check(L,i+1,a,b)
+			elif(a>L[i]):
+				a=L[i]
+				b=a
+				return check(L,i+1,a,b)
+			else:
+    				return b
+		else:
+    			return b
+    				
