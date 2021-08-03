@@ -1,6 +1,8 @@
 '''
 movieAwards(oscarResults) [10 pts]
-Write the function movieAwards(oscarResults) that takes a set of tuples, where each tuple holds the name of a category and the name of the winning movie, then returns a dictionary mapping each movie to the number of the awards that it won. For example, if we provide the set:
+Write the function movieAwards(oscarResults) that takes a set of tuples, where each tuple holds the name of a category and 
+the name of the winning movie, then returns a dictionary mapping each movie to the number of the awards that it won.
+ For example, if we provide the set:
 { 
     ("Best Picture", "The Shape of Water"), 
     ("Best Actor", "Darkest Hour"),
@@ -21,4 +23,8 @@ the function should return as follows
 
 def movie_awards(oscarResults):
     # Your code goes here...
-    pass
+    r=list(oscarResults)
+    a={}
+    for x, y in r:
+        a[y] = a.get(y, 0) + 1
+    return a
