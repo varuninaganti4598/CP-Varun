@@ -9,4 +9,19 @@
 
 def limitedPowerSet(n, k):
     # Your code goes here...
-    pass
+    l=[]
+    res=[{}]
+    for i in range(1,n+1):
+        l.append(i)
+        res.append(i)
+    
+    for j in range(1,1<<n):
+        result=[]
+        result.append({l[m] for m in range(n) if(j&(1<<m))})
+        for k in result:
+            if k not in res:
+                res.append(k)
+
+    return res[:k]
+
+    
